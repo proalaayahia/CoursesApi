@@ -8,6 +8,7 @@ public interface IApplicationDbContext
     DbSet<Course> Courses { get; }
     DbSet<Category> Categories { get; }
     DbSet<Image> Images { get; }
-    DbSet<T> Set<T>() where T:class;
-    Task<int>SaveChangesAsync(CancellationToken cancellationToken );
+    DbSet<T> Set<T>() where T : class;
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+    ValueTask DisposeAsync();
 }

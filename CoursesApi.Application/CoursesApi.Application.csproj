@@ -13,15 +13,16 @@
     <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CoursesApi.Domain\CoursesApi.Domain.csproj" />
     <ProjectReference Include="..\CoursesApi.Infrastructure\CoursesApi.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Common\Behaviors\" />
-    <Folder Include="Common\Interfaces\" />
     <Folder Include="Category\" />
     <Folder Include="Course\ViewModels\" />
     <Folder Include="Course\Queries\" />
