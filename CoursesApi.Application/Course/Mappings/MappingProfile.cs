@@ -11,6 +11,10 @@ public class MappingProfile : Profile
         CreateMap<CoursesApi.Domain.Entities.Course, CreateCourseCommand>()
         .ForMember(m => m.CategoryId, p => p.MapFrom(opt => opt.Category.Id))
         .ForMember(m => m.imageId, p => p.MapFrom(opt => opt.image!.Id)).ReverseMap();
+        
+        CreateMap<CoursesApi.Domain.Entities.Course, EditCourseCommand>()
+        .ForMember(m => m.CategoryId, p => p.MapFrom(opt => opt.Category.Id))
+        .ForMember(m => m.imageId, p => p.MapFrom(opt => opt.image!.Id)).ReverseMap();
 
         CreateMap<CoursesApi.Domain.Entities.Course, CourseVM>()
         .ForMember(m => m.CategoryId, p => p.MapFrom(opt => opt.Category.Id))

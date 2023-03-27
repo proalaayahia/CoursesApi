@@ -1,10 +1,10 @@
 ﻿namespace CoursesApi.Application.Common.Interfaces;
 
-public interface IRepository<TSource,TDestination> where TDestination : class where TSource : class
+public interface IRepository<TSource> where TSource : class
 {
-    Task AddAsync(TDestination source);
-    void Update(TDestination source);
-    Task<TDestination> GetByIdAsync(int id);
-    Task<IEnumerable<TDestination>> GetAllAsync();
+    Task AddAsync(TSource source);
+    void Update(TSource source);
+    Task<TSource> GetByIdAsync(int id);
+    Task<IEnumerable<TSource>> GetAllAsync();
     Task RemoveAsync(int id);
 }

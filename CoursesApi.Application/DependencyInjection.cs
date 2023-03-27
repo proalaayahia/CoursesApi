@@ -16,9 +16,10 @@ public static class DependencyInjection
     {
         services.AddInfrastructure(configuration);
         services.AddAutoMapper(assemblies: Assembly.GetExecutingAssembly());
+        services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(assembly:Assembly.GetExecutingAssembly()));
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
         services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-        // services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         return services;
     }
